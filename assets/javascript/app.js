@@ -1,21 +1,21 @@
 // Create trivia objects with clues and correct/incorrect answers
 
 var trivia = [{
-    question: "Question 1",
-    answers: ["A", "B", "C", "D"],
-    correctAns: 0,
+    question: "Which of these gods are NOT part of the Greek Olympian pantheon?",
+    answers: ["Hephaestus", "Artemis", "Poseidon", "Kronos"],
+    correctAns: 3,
 },{
-    question: "Question 2",
-    answers: ["A", "B", "C", "D"],
+    question: "This Ancient Egyptian deity is often depicted in art with the hed of an ibis or a baboon:",
+    answers: ["Ra", "Thoth", "Horus", "Osiris"],
     correctAns: 1,
 },{
-    question: "Question 3",
-    answers: ["A", "B", "C", "D"],
-    correctAns: 2,
-},{
-    question: "Question 4",
-    answers: ["A", "B", "C", "D"],
+    question: "This Norse Valkyrie's name translates into 'Spear-flinger':",
+    answers: ["Hildr", "Göndul", "Herja", "Geirdriful"],
     correctAns: 3,
+},{
+    question: "A cruel Greek king whose punishment from the gods was to fruitlessly push a large boulder up a hill:",
+    answers: ["Sisyphus", "Narcissus", "Aeneas", "Oedipus"],
+    correctAns: 0,
 }]
 
 $(document).ready(function(){
