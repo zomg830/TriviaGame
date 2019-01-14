@@ -4,34 +4,42 @@ var trivia = [{
     question: "Which of these gods are NOT part of the Greek Olympian pantheon?",
     answers: ["Hephaestus", "Artemis", "Poseidon", "Kronos"],
     correctAns: 3,
+    category: "Greek"
 },{
     question: "This Ancient Egyptian deity is often depicted in art with the hed of an ibis or a baboon:",
     answers: ["Ra", "Thoth", "Horus", "Osiris"],
     correctAns: 1,
+    category: "Egyptian"
 },{
     question: "This Norse Valkyrie's name translates into 'Spear-flinger':",
     answers: ["Hildr", "Göndul", "Herja", "Geirdriful"],
     correctAns: 3,
+    category: "Norse"
 },{
     question: "A cruel Greek king whose punishment from the gods was to fruitlessly push a large boulder up a hill:",
     answers: ["Sisyphus", "Narcissus", "Aeneas", "Oedipus"],
     correctAns: 0,
+    category: "Greek"
 },{
     question: "The mighty 'Allfather', chief of the Norse Aesir tribe:",
     answers: ["Tyr", "Baldur", "Odin", "Thor"],
     correctAns: 2,
+    category: "Norse"
 },{
     question: "Site of the first known Egyptian sun temple, located northeast of modern Cairo:",
     answers: ["Hermopolis", "Heliopolis", "Elephantine", "Memphis"],
     correctAns: 1,
+    category: "Egyptian"
 },{
     question: "Greek god of fear, son of the gods Ares and Aphrodite:",
     answers: ["Phobos", "Deimos", "Demeter", "Amphitrite"],
     correctAns: 0,
+    category: "Greek"
 },{
     question: "The ever-vigilant guardian of the Norse gods' stronghold, Asgard:",
     answers: ["Fenrir", "Frigg", "Loki", "Heimdall"],
     correctAns: 3,
+    category: "Norse"
 }]
 
 $(document).ready(function(){
