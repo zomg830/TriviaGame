@@ -64,9 +64,9 @@ $(document).ready(function(){
     });
 
     function initializeGame(){
-        $("finalStatus").empty();
-        $("correctAns").empty();
-        $("incorrectAns").empty();
+        $("#finalStatus").empty();
+        $("#correctAns").empty();
+        $("#incorrectAns").empty();
         $("#unanswered").empty();
         currentQuestion = 0;
         wrongAns = 0;
