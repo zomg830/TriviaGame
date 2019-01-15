@@ -3,3 +3,42 @@
     text-decoration: underline overline dotted red;
     cursor:pointer;
 }
+
+.greekstyle{
+    background-color: #055eb0;
+    background-image: url("https://www.transparenttextures.com/patterns/subtle-grey.png");
+}
+
+.norsestyle{
+    background-color: #991b1e;
+    background-image: url("https://www.transparenttextures.com/patterns/grunge-wall.png");
+}
+
+.egyptstyle{
+    background-color: #ffecce;
+    background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
+}
+
+.container{
+    margin-top: 2%;
+    padding-bottom: 2%;
+    max-width:75vw;
+}
+
+.icon{
+    height: 20vh;
+    padding-top:2vh;
+}
+
+p, .choice, #activeQuestion, #message, #missedAns, #correctAns, #incorrectAns, #unanswered, .btn{
+    font-family: 'Smythe', cursive;
+    font-size:1.3rem;
+}
+
+.choice{
+    padding: 1vh;
+}
+
+#newGame{
+    margin:5vh;
+}

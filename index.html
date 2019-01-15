@@ -8,19 +8,22 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Smythe" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/hover.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
 <body>
     <!-- Need three pages: active question, answer page post-question, and final results -->
-    <div class="container">
+    <div class="container" style="background-color:rgba(211, 211, 211, 0.8);">
         <!-- Landing page, will show start game button -->
-        <button class="btn btn-secondary" id="newGame">Click here to start!</button>
+        <div class="col text-center">
+            <button class="btn btn-secondary text-center" id="newGame">Click here to start!</button>
+        </div>
         <!-- End of landing page -->
 
         <!-- Question page with time, question, and answers -->
-        <div id="time"></div>
+        <div id="category" class="d-flex justify-content-center"></div>
+        <div id="time" class="d-flex justify-content-center"></div>
         <div id="activeQuestion"></div>
         <div class="question"></div>
         <div class="answers"></div>
@@ -34,10 +37,12 @@
 
         <!-- Final Results Page -->
         <div id="finalStatus"></div>
-        <div id="correctAns"></div>
-        <div id="incorrectAns"></div>
-        <div id="unanswered"></div>
-        <button class="btn btn-secondary" id="resetBtn"></button>
+        <div id="correctAns" class="text-center"></div>
+        <div id="incorrectAns" class="text-center"></div>
+        <div id="unanswered" class="text-center"></div>
+        <div class="col text-center">
+            <button class="btn btn-secondary text-center" id="resetBtn"></button>            
+        </div>
         <!-- End of final results page -->
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -4,54 +4,65 @@ var trivia = [{
     question: "Which of these gods are NOT part of the Greek Olympian pantheon?",
     answers: ["Hephaestus", "Artemis", "Poseidon", "Kronos"],
     correctAns: 3,
-    category: "Greek"
+    category: "Greek",
+    gif:"",
+    icon: "assets/images/1870.png"
 },{
-    question: "This Ancient Egyptian deity is often depicted in art with the hed of an ibis or a baboon:",
+    question: "This Ancient Egyptian deity is often depicted in art with the head of an ibis or a baboon:",
     answers: ["Ra", "Thoth", "Horus", "Osiris"],
     correctAns: 1,
-    category: "Egyptian"
+    category: "Egyptian",
+    gif:"",
+    icon:"assets/images/1871.png"
 },{
     question: "This Norse Valkyrie's name translates into 'Spear-flinger':",
     answers: ["Hildr", "Göndul", "Herja", "Geirdriful"],
     correctAns: 3,
-    category: "Norse"
+    category: "Norse",
+    gif:"",
+    icon:"assets/images/1872.png"
 },{
     question: "A cruel Greek king whose punishment from the gods was to fruitlessly push a large boulder up a hill:",
     answers: ["Sisyphus", "Narcissus", "Aeneas", "Oedipus"],
     correctAns: 0,
-    category: "Greek"
+    category: "Greek",
+    gif:"",
+    icon:"assets/images/1870.png"
 },{
     question: "The mighty 'Allfather', chief of the Norse Aesir tribe:",
     answers: ["Tyr", "Baldur", "Odin", "Thor"],
     correctAns: 2,
-    category: "Norse"
+    category: "Norse",
+    gif:"",
+    icon:"assets/images/1872.png"
 },{
     question: "Site of the first known Egyptian sun temple, located northeast of modern Cairo:",
     answers: ["Hermopolis", "Heliopolis", "Elephantine", "Memphis"],
     correctAns: 1,
-    category: "Egyptian"
+    category: "Egyptian",
+    gif:"",
+    icon:"assets/images/1871.png"
 },{
     question: "Greek god of fear, son of the gods Ares and Aphrodite:",
     answers: ["Phobos", "Deimos", "Demeter", "Amphitrite"],
     correctAns: 0,
-    category: "Greek"
+    category: "Greek",
+    gif:"",
+    icon:"assets/images/1870.png"
 },{
     question: "The ever-vigilant guardian of the Norse gods' stronghold, Asgard:",
     answers: ["Fenrir", "Frigg", "Loki", "Heimdall"],
     correctAns: 3,
-    category: "Norse"
+    category: "Norse",
+    gif:"",
+    icon:"assets/images/1872.png"
 }]
 
-$(document).ready(function(){
-    var timeInt; //variable to hold countdown interval
-    var secs; //variable to hold seconds remaining
-    var rightAns; //variable to store correct answer from trivia object above
-    var wrongAns; //variable to store incorrect answers from trivia object above
-    var currentQuestion; //variable to hold current question from trivia object above
-    var userChoice; //variable to capture the user's selection on click
-    var answered; //variable to hold final questions answered
-    var unanswered; //variable to hole final questions unanswered
 
+$(document).ready(function(){
+    var timeInt, secs, rightAns, wrongAns, currentQuestion, userChoice, answered, unanswered; //Instantiate various variables
+
+    //Results array with canned responses based on individual page result
     var results = {
         correct: "You're right!",
         incorrect: "You're wrong!",
@@ -71,6 +82,20 @@ $(document).ready(function(){
         initializeGame();
     });
 
+    function catStyle(){
+        $(document.body).removeClass("greekstyle norsestyle egyptstyle");
+        $("#category").empty();
+        var currentQuestionCategory = trivia[currentQuestion].category;
+        if (currentQuestionCategory === "Greek"){
+            $(document.body).addClass("greekstyle");
+        } else if (currentQuestionCategory === "Norse"){
+            $(document.body).addClass("norsestyle");
+        } else if (currentQuestionCategory === "Egyptian"){
+            $(document.body).addClass("egyptstyle");
+        }
+        $("#category").html('<img src="'+trivia[currentQuestion].icon+'" class="icon">');
+    }
+
     function initializeGame(){
         $("#finalStatus").empty();
         $("#correctAns").empty();
@@ -81,16 +106,19 @@ $(document).ready(function(){
         rightAns = 0;
         unanswered = 0;
         nextQuestion();
+        catStyle();
     }
 
     function nextQuestion(){
         $('#message').empty();
         $('#missedAns').empty();
         $('#gif').empty();
+        $(".answers").empty();
         answered = true;
+        catStyle();
 
         $("#activeQuestion").html('Question ' + (currentQuestion+1)+'/'+trivia.length);
-        $(".question").html("<p>" + trivia[currentQuestion].question + '</p>');
+        $(".question").html('<p>' + trivia[currentQuestion].question + '</p>');
         for (var i = 0; i < 4; i++){
             var choices = $('<div>');
             choices.text(trivia[currentQuestion].answers[i]);
@@ -124,7 +152,7 @@ $(document).ready(function(){
 
     function postPage(){
         $("#activeQuestion").empty();
-        $(".choice").empty();
+        $(".answers").empty();
         $(".question").empty();
 
         var correctAns = trivia[currentQuestion].answers[trivia[currentQuestion].correctAns];
@@ -137,11 +165,11 @@ $(document).ready(function(){
         } else if ((userChoice != ansIndex && answered === true)){
             wrongAns++;
             $("#message").html(results.incorrect);
-            $("#missedAns").html("The right answer is: " + correctAns);
+            $("#missedAns").html("The correct answer is: " + correctAns);
         } else{
             unanswered++;
             $("#message").html(results.noTime);
-            $("#missedAns").html("The right answer is: " + correctAns);
+            $("#missedAns").html("The correct answer is: " + correctAns);
             answered = true;
         }
 
@@ -157,12 +185,14 @@ $(document).ready(function(){
         $("#time").empty();
         $("#message").empty();
         $("#missedAns").empty();
+        $(".answers").empty();
+        $("#category").html("");
 
         $("#finalStatus").html(results.finished);
         $("#correctAns").html("Correct Answers: " + rightAns);
         $("#incorrectAns").html("Incorrect Answers: " + wrongAns);
         $("#unanswered").html("Unanswered: " + unanswered);
         $('#resetBtn').show();
-        $('#resetBtn').text('Start Over?');
+        $('#resetBtn').text("Click to restart!");
     }
 });
