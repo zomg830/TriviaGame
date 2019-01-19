@@ -5,57 +5,85 @@ var trivia = [{
     answers: ["Hephaestus", "Artemis", "Poseidon", "Kronos"],
     correctAns: 3,
     category: "Greek",
-    gif:"",
+    gif:"assets/images/mount-olympus.gif",
     icon: "assets/images/1870.png"
 },{
     question: "This Ancient Egyptian deity is often depicted in art with the head of an ibis or a baboon:",
     answers: ["Ra", "Thoth", "Horus", "Osiris"],
     correctAns: 1,
     category: "Egyptian",
-    gif:"",
+    gif:"assets/images/thoth.gif",
     icon:"assets/images/1871.png"
 },{
     question: "This Norse Valkyrie's name translates into 'Spear-flinger':",
     answers: ["Hildr", "Göndul", "Herja", "Geirdriful"],
     correctAns: 3,
     category: "Norse",
-    gif:"",
+    gif:"assets/images/valkyrie.gif",
     icon:"assets/images/1872.png"
 },{
     question: "A cruel Greek king whose punishment from the gods was to fruitlessly push a large boulder up a hill:",
     answers: ["Sisyphus", "Narcissus", "Aeneas", "Oedipus"],
     correctAns: 0,
     category: "Greek",
-    gif:"",
+    gif:"assets/images/sisyphus.gif",
     icon:"assets/images/1870.png"
 },{
     question: "The mighty 'Allfather', chief of the Norse Aesir tribe:",
     answers: ["Tyr", "Baldur", "Odin", "Thor"],
     correctAns: 2,
     category: "Norse",
-    gif:"",
+    gif:"assets/images/odin.gif",
     icon:"assets/images/1872.png"
 },{
     question: "Site of the first known Egyptian sun temple, located northeast of modern Cairo:",
     answers: ["Hermopolis", "Heliopolis", "Elephantine", "Memphis"],
     correctAns: 1,
     category: "Egyptian",
-    gif:"",
+    gif:"assets/images/sun-temple.gif",
     icon:"assets/images/1871.png"
 },{
     question: "Greek god of fear, son of the gods Ares and Aphrodite:",
     answers: ["Phobos", "Deimos", "Demeter", "Amphitrite"],
     correctAns: 0,
     category: "Greek",
-    gif:"",
+    gif:"assets/images/phobos.gif",
     icon:"assets/images/1870.png"
 },{
     question: "The ever-vigilant guardian of the Norse gods' stronghold, Asgard:",
     answers: ["Fenrir", "Frigg", "Loki", "Heimdall"],
     correctAns: 3,
     category: "Norse",
+    gif:"assets/images/heimdall.gif",
+    icon:"assets/images/1872.png"
+},{
+    question: "Egyptian Lord of the Underworld and Judge of the dead:",
+    answers: ["Geb", "Ptah", "Osiris", "Set"],
+    correctAns: 2,
+    category: "Egyptian",
+    gif:"assets/images/osiris.gif",
+    icon:"assets/images/1871.png"
+},{
+    question: "The Norse goddess of love, became an honorable member of the Aesir after the war between the Aesir and Vanir ended:",
+    answers: ["Sigyn", "Freya", "Idun", "Nanna"],
+    correctAns: 1,
+    category: "Norse",
     gif:"",
     icon:"assets/images/1872.png"
+},{
+    question: "The largest island in Greece and has been the backdrop for a number of stories of ancient Greek mythology.",
+    answers: ["Mykonos", "Crete", "Rhodes", "Santorini"],
+    correctAns: 1,
+    category: "Greek",
+    gif:"",
+    icon:"assets/images/1870.png"
+},{
+    question: "Mythological hybrid creature with a lion's head, a goat's body, and a serpent's tail:",
+    answers: ["Hydra", "Nymph", "Centaur", "Chimera"],
+    correctAns: 3,
+    category: "Greek",
+    gif:"",
+    icon:"assets/images/1870.png"
 }]
 
 
@@ -159,6 +187,7 @@ $(document).ready(function(){
         console.log("correctAns: " + correctAns);
         var ansIndex = trivia[currentQuestion].correctAns;
         console.log("ansIndex: " + ansIndex);
+        $("#gif").html('<img src="'+trivia[currentQuestion].gif+'" class="gif">')
         if((userChoice === ansIndex) && (answered === true)){
             rightAns++;
             $("#message").html(results.correct);
