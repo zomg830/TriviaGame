@@ -68,21 +68,21 @@ var trivia = [{
     answers: ["Sigyn", "Freya", "Idun", "Nanna"],
     correctAns: 1,
     category: "Norse",
-    gif:"",
+    gif:"assets/images/freya.gif",
     icon:"assets/images/1872.png"
 },{
     question: "The largest island in Greece and has been the backdrop for a number of stories of ancient Greek mythology.",
     answers: ["Mykonos", "Crete", "Rhodes", "Santorini"],
     correctAns: 1,
     category: "Greek",
-    gif:"",
+    gif:"assets/images/crete.gif",
     icon:"assets/images/1870.png"
 },{
     question: "Mythological hybrid creature with a lion's head, a goat's body, and a serpent's tail:",
     answers: ["Hydra", "Nymph", "Centaur", "Chimera"],
     correctAns: 3,
     category: "Greek",
-    gif:"",
+    gif:"assets/images/chimera.gif",
     icon:"assets/images/1870.png"
 }]
 
@@ -216,6 +216,7 @@ $(document).ready(function(){
         $("#missedAns").empty();
         $(".answers").empty();
         $("#category").html("");
+        $("#gif").html('<img src="assets/images/victory.gif" class="gif">')
 
         $("#finalStatus").html(results.finished);
         $("#correctAns").html("Correct Answers: " + rightAns);
