@@ -32,7 +32,8 @@
 }
 
 .gif{
-    height:35vh;
+    max-width:75%;
+    max-height:75%;
 }
 
 p, .choice, #activeQuestion, #message, #missedAns, #correctAns, #incorrectAns, #unanswered, .btn{
